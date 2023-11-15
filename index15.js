@@ -8,11 +8,19 @@ console.log(inputHereString);
 const stringFlavorArr = inputHereString.split(",");
 console.log(stringFlavorArr);
 
-//Convert the array of strings into array of flavors
-const flavors = [];
-for (let favs = 0; favs < stringFlavorArr.length; favs++) {
-    const flavFlav = stringFlavorArr[favs];
-    const favor = flavFlav;
-    flavors.push(favor)
-} 
-console.log(flavors)
+
+function flavorOrder(elements) {
+    const flavor = {};
+    for (let i = 0; i < elements.length; i++) {
+      if (flavor[elements[i]]) {
+
+        flavor[elements[i]]++;
+      } else {
+
+        flavor[elements[i]] = 1;
+      }
+    }
+    return flavor;
+}
+
+console.log(flavorOrder(stringFlavorArr))
